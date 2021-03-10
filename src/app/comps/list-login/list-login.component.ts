@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomersService } from 'src/app/shared/customers.service';
+
 
 @Component({
   selector: 'app-list-login',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListLoginComponent implements OnInit {
 
-  constructor() { }
+  data: any
+
+  constructor(private service: CustomersService) { }
 
   ngOnInit(): void {
+    this.getAllCustomers()
+  }
+
+  getAllCustomers(){
+    this.service.fetch_customers()
+      .subscribe((data) => {
+        this.data = data
+        console.log(this.data)      
+      })
   }
 
 }

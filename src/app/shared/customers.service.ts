@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomersService {
+
+  url: string = 'http://localhost:3000';
+  //remoteUrl: string = ''
+
+  constructor(private http: HttpClient) { }
+
+  create_customer(data) {
+    return this.http.post(`${this.url}/api/customer/create-customer`, data);
+  }
+
+  fetch_customers() {
+    return this.http.get(`${this.url}/api/customer/customers`);
+  }
+
+
+}
