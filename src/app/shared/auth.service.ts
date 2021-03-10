@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { tap } from 'rxjs/operators'
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,17 +8,12 @@ import { Subject } from 'rxjs';
 export class AuthService {
 
   token: string = null
-
-  //public auth_admin = new Subject() 
+  url: string = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 
-  // notifyAuth(){
-  //     this.auth_admin.next();
-  // }
-
   login(admin){
-    return this.http.post(`http://localhost:3000/api/auth/login`, admin)
+    return this.http.post(`${this.url}/api/auth/login`, admin)
       .pipe(
         tap(this.setToken)
       )

@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+//import { Observable } from 'rx/js/operators'
 
+interface Customer{
+  name: string,
+  email: string,
+  phone: number
+}
 
 @Injectable({
   providedIn: 'root'

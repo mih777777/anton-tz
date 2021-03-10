@@ -21,7 +21,7 @@ export class ListLoginComponent implements OnInit {
     this.service.fetch_customers()
       .subscribe((data) => {
         this.data = data
-        console.log(this.data)      
+        //console.log(this.data)      
       })
   }
 
