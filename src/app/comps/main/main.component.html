@@ -1,12 +1,15 @@
 <div class="menu">
     <nav>
-      <a routerLink="/">< back to main page</a><br><br>
-      <a routerLink="/list-login">enter to list</a>
+      <a routerLink="/login">Login as administrator</a>
       <!-- <a href="">Login as admin</a> -->
     </nav>
   </div>
   <hr>
-  <br><br>
+  <div class="">
+    <h3>
+      Leave your details and we will call you back
+    </h3>
+  </div><br><br>
 
 <div class="row">
   <div class="col">
@@ -20,7 +23,11 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
-      
+      <div class="form-group">
+        <label for="exampleInputEmail1">phone number</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>

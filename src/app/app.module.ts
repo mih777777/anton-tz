@@ -6,11 +6,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './comps/login/login.component';
+import { MainComponent } from './comps/main/main.component';
+import { ListLoginComponent } from './comps/list-login/list-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent,
+    ListLoginComponent
   ],
   imports: [
     BrowserModule,
