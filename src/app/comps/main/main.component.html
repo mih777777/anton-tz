@@ -45,7 +45,13 @@
             <span *ngIf="form.get('phone').errors['required']">Вы не ввели телефон</span>
         </span>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      
+      <button 
+            type="submit"
+            class="btn"
+            [disabled]="form.invalid || form.disabled"
+        >Submit
+        </button>
     </form>
   </div>
 </div>

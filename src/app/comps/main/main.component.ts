@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomersService } from 'src/app/shared/customers.service';
 
-interface Customer{
-  name: string,
-  email: string,
-  phone: number
-}
 
 @Component({
   selector: 'app-main',
@@ -15,7 +10,6 @@ interface Customer{
 })
 export class MainComponent implements OnInit {
 
-  //customer: Customer[] = []
   customer: any[] = []
 
   form: FormGroup
@@ -25,15 +19,19 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      phone: new FormControl(null, [Validators.required])
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required
+      ]),
+      phone: new FormControl('', [Validators.required])
       
     })
 
   }
 
   addCustomer(){
+    this.form.disable()
     const formData = { ...this.form.value }
 
     this.service.create_customer({
