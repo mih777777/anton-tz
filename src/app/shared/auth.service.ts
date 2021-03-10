@@ -8,7 +8,8 @@ import { tap } from 'rxjs/operators'
 export class AuthService {
 
   token: string = null
-  url: string = 'http://localhost:3000'
+  //url: string = 'http://localhost:3000'
+  url: string = 'https://graph-server777.herokuapp.com'
 
   constructor(private http: HttpClient) { }
 

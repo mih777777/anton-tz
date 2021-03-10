@@ -13,8 +13,8 @@ interface Customer{
 })
 export class CustomersService {
 
-  url: string = 'http://localhost:3000';
-  //remoteUrl: string = ''
+  //url: string = 'http://localhost:3000';
+  url: string = 'https://graph-server777.herokuapp.com'
 
   constructor(private http: HttpClient) { }
 
